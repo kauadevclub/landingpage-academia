@@ -19,11 +19,9 @@ Projeto criado para apresentar serviços, horários, planos e incentivar a inscr
 - **CSS3** → estilização, animações e layout responsivo  
 - **JavaScript** → interatividade, validação de formulário e animações  
 
----
 
-## 📸 Preview
-![Preview da Landing Page](./preview.png)  
-*(adicione aqui uma imagem ou gif mostrando a landing page em ação)*  
+
+ 
 
 ---
 
