@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerFit - Transforme Seu Corpo</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('http://static.photos/fitness/1200x630/1');
+            background-size: cover;
+            background-position: center;
+        }
+        .testimonial-slider {
+            scroll-snap-type: x mandatory;
+        }
+        .testimonial-slide {
+            scroll-snap-align: start;
+        }
+        .btn-primary {
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(239, 68, 68, 0.3);
+        }
+        .plan-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+    <!-- Header -->
+    <header class="fixed w-full bg-gray-900/90 backdrop-blur-sm z-50 shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <i data-feather="activity" class="text-red-500 mr-2"></i>
+                <span class="text-xl font-bold bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">POWERFIT</span>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#home" class="hover:text-red-500 transition">Home</a></li>
+                    <li><a href="#about" class="hover:text-red-500 transition">Sobre</a></li>
+                    <li><a href="#plans" class="hover:text-red-500 transition">Planos</a></li>
+                    <li><a href="#testimonials" class="hover:text-red-500 transition">Depoimentos</a></li>
+                    <li><a href="#gallery" class="hover:text-red-500 transition">Galeria</a></li>
+                    <li><a href="#contact" class="hover:text-red-500 transition">Contato</a></li>
+                </ul>
+            </nav>
+            <button class="md:hidden focus:outline-none" id="mobile-menu-button">
+                <i data-feather="menu"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-gray-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-4 space-y-1">
+                <a href="#home" class="block px-3 py-2 hover:bg-gray-700 rounded">Home</a>
+                <a href="#about" class="block px-3 py-2 hover:bg-gray-700 rounded">Sobre</a>
+                <a href="#plans" class="block px-3 py-2 hover:bg-gray-700 rounded">Planos</a>
+                <a href="#testimonials" class="block px-3 py-2 hover:bg-gray-700 rounded">Depoimentos</a>
+                <a href="#gallery" class="block px-3 py-2 hover:bg-gray-700 rounded">Galeria</a>
+                <a href="#contact" class="block px-3 py-2 hover:bg-gray-700 rounded">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-6 py-20">
+            <div class="max-w-2xl" data-aos="fade-right">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                    TRANSFORME SEU <span class="text-red-500">CORPO</span> EM NOSSA ACADEMIA
+                </h1>
+                <p class="text-xl mb-8 text-gray-300">
+                    Equipamentos modernos, professores qualificados e o ambiente perfeito para você alcançar seus objetivos.
+                </p>
+                <a href="#contact" class="btn-primary inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg">
+                    MATRICULE-SE AGORA
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">SOBRE A <span class="text-red-500">POWERFIT</span></h2>
+                <div class="w-20 h-1 bg-red-500 mx-auto"></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <img src="http://static.photos/fitness/640x360/2" alt="Academia PowerFit" class="rounded-lg shadow-xl">
+                </div>
+                <div class="md:w-1/2 md:pl-12" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold mb-6">Nossa Missão</h3>
+                    <p class="mb-6 text-gray-300">
+                        Na PowerFit, nossa missão é transformar vidas através do fitness. Acreditamos que todos têm o potencial para alcançar seus objetivos físicos com o suporte certo.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i data-feather="check-circle" class="text-red-500 mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold">Equipamentos Modernos</h4>
+                                <p class="text-gray-400">Máquinas de última geração para todos os tipos de treino.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-feather="check-circle" class="text-red-500 mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold">Professores Qualificados</h4>
+                                <p class="text-gray-400">Profissionais certificados para te acompanhar em cada etapa.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-feather="check-circle" class="text-red-500 mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold">Aulas Diversificadas</h4>
+                                <p class="text-gray-400">De musculação a crossfit, temos opções para todos os gostos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans Section -->
+    <section id="plans" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">NOSSOS <span class="text-red-500">PLANOS</span></h2>
+                <div class="w-20 h-1 bg-red-500 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Basic Plan -->
+                <div class="plan-card bg-gray-800 rounded-lg p-8 transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold mb-2">BÁSICO</h3>
+                        <p class="text-gray-400 mb-4">Ideal para iniciantes</p>
+                        <div class="text-4xl font-bold text-red-500 mb-4">R$ 99<span class="text-xl">/mês</span></div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-green-500 mr-2"></i>
+                            <span>Acesso à musculação</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-green-500 mr-2"></i>
+                            <span>2 aulas semanais</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="x" class="text-gray-500 mr-2"></i>
+                            <span class="text-gray-500">Acompanhamento personalizado</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="x" class="text-gray-500 mr-2"></i>
+                            <span class="text-gray-500">Acesso ilimitado</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="btn-primary block w-full bg-gray-700 hover:bg-gray-600 text-center text-white font-bold py-3 px-4 rounded-lg transition">
+                        ASSINAR
+                    </a>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="plan-card bg-gray-800 rounded-lg p-8 border-2 border-red-500 transform scale-105" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center mb-6">
+                        <div class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">POPULAR</div>
+                        <h3 class="text-2xl font-bold mb-2">PREMIUM</h3>
+                        <p class="text-gray-400 mb-4">O mais escolhido</p>
+                        <div class="text-4xl font-bold text-red-500 mb-4">R$ 149<span class="text-xl">/mês</span></div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-green-500 mr-2"></i>
+                            <span>Acesso à musculação</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-green-500 mr-2"></i>
+                            <span>Aulas ilimitadas</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-green-500 mr-2"></i>
+                            <span>Acompanhamento mensal</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-green-500 mr-2"></i>
+                            <span>Acesso ilimitado</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="btn-primary block w-full bg-red-600 hover:bg-red-700 text-center text-white font-bold py-3 px-4 rounded-lg transition">
+                        ASSINAR
+                    </a>
+                </div>
+
+                <!-- VIP Plan -->
+                <div class="plan-card bg-gray-800 rounded-lg p-8" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold mb-2">VIP</h3>
+                        <p class="text-gray-400 mb-4">Experiência completa</p>
+                        <div class="text-4xl font-bold text-red-500 mb-4">R$ 249<span class="text-xl">/mês</span></div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-green-500 mr-2"></i>
+                            <span>Acesso à musculação</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-green-500 mr-2"></i>
+                            <span>Aulas ilimitadas</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-green-500 mr-2"></i>
+                            <span>Personal trainer</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="check" class="text-green-500 mr-2"></i>
+                            <span>Acesso 24h</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="btn-primary block w-full bg-gray-700 hover:bg-gray-600 text-center text-white font-bold py-3 px-4 rounded-lg transition">
+                        ASSINAR
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">DEPOIMENTOS DE <span class="text-red-500">ALUNOS</span></h2>
+                <div class="w-20 h-1 bg-red-500 mx-auto"></div>
+            </div>
+            <div class="relative">
+                <div class="testimonial-slider flex overflow-x-auto pb-8 scrollbar-hide" id="testimonial-slider">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-slide flex-shrink-0 w-full md:w-1/2 px-4">
+                        <div class="bg-gray-700 rounded-lg p-8" data-aos="fade-right">
+                            <div class="flex items-center mb-6">
+                                <img src="http://static.photos/people/200x200/1" alt="Cliente" class="w-16 h-16 rounded-full object-cover mr-4">
+                                <div>
+                                    <h4 class="font-bold">Carlos Silva</h4>
+                                    <p class="text-gray-400">Aluno há 1 ano</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-300">
+                                "A PowerFit mudou minha vida! Em 6 meses perdi 15kg e ganhei muita disposição. Os professores são incríveis e a estrutura é impecável."
+                            </p>
+                            <div class="flex mt-4">
+                                <i data-feather="star" class="text-yellow-400 mr-1"></i>
+                                <i data-feather="star" class="text-yellow-400 mr-1"></i>
+                                <i data-feather="star" class="text-yellow-400 mr-1"></i>
+                                <i data-feather="star" class="text-yellow-400 mr-1"></i>
+                                <i data-feather="star" class="text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-slide flex-shrink-0 w-full md:w-1/2 px-4">
+                        <div class="bg-gray-700 rounded-lg p-8" data-aos="fade-up">
+                            <div class="flex items-center mb-6">
+                                <img src="http://static.photos/people/200x200/2" alt="Cliente" class="w-16 h-16 rounded-full object-cover mr-4">
+                                <div>
+                                    <h4 class="font-bold">Ana Oliveira</h4>
+                                    <p class="text-gray-400">Aluna há 8 meses</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-300">
+                                "Nunca fui tão bem acompanhada em uma academia. Meu treino é personalizado e evolui conforme meus objetivos. Recomendo para todas as mulheres!"
+                            </p>
+                            <div class="flex mt-4">
+                                <i data-feather="star" class="text-yellow-400 mr-1"></i>
+                                <i data-feather="star" class="text-yellow-400 mr-1"></i>
+                                <i data-feather="star" class="text-yellow-400 mr-1"></i>
+                                <i data-feather="star" class="text-yellow-400 mr-1"></i>
+                                <i data-feather="star" class="text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-slide flex-shrink-0 w-full md:w-1/2 px-4">
+                        <div class="bg-gray-700 rounded-lg p-8" data-aos="fade-left">
+                            <div class="flex items-center mb-6">
+                                <img src="http://static.photos/people/200x200/3" alt="Cliente" class="w-16 h-16 rounded-full object-cover mr-4">
+                                <div>
+                                    <h4 class="font-bold">Ricardo Santos</h4>
+                                    <p class="text-gray-400">Aluno há 2 anos</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-300">
+                                "Como atleta amador, encontrei na PowerFit a estrutura perfeita para meus treinos. Equipamentos de qualidade e professores que entendem de verdade de performance."
+                            </p>
+                            <div class="flex mt-4">
+                                <i data-feather="star" class="text-yellow-400 mr-1"></i>
+                                <i data-feather="star" class="text-yellow-400 mr-1"></i>
+                                <i data-feather="star" class="text-yellow-400 mr-1"></i>
+                                <i data-feather="star" class="text-yellow-400 mr-1"></i>
+                                <i data-feather="star" class="text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center mt-8 space-x-2">
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-gray-600 focus:outline-none" data-index="0"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-gray-600 focus:outline-none" data-index="1"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-gray-600 focus:outline-none" data-index="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">NOSSA <span class="text-red-500">GALERIA</span></h2>
+                <div class="w-20 h-1 bg-red-500 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="overflow-hidden rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                    <img src="http://static.photos/fitness/640x360/3" alt="Academia" class="w-full h-64 object-cover hover:scale-105 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                    <img src="http://static.photos/fitness/640x360/4" alt="Aula em grupo" class="w-full h-64 object-cover hover:scale-105 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-lg" data-aos="fade-up" data-aos-delay="300">
+                    <img src="http://static.photos/fitness/640x360/5" alt="Personal trainer" class="w-full h-64 object-cover hover:scale-105 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-lg" data-aos="fade-up" data-aos-delay="400">
+                    <img src="http://static.photos/fitness/640x360/6" alt="Equipamentos" class="w-full h-64 object-cover hover:scale-105 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-lg" data-aos="fade-up" data-aos-delay="500">
+                    <img src="http://static.photos/fitness/640x360/7" alt="Musculação" class="w-full h-64 object-cover hover:scale-105 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-lg" data-aos="fade-up" data-aos-delay="600">
+                    <img src="http://static.photos/fitness/640x360/8" alt="Crossfit" class="w-full h-64 object-cover hover:scale-105 transition duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">ENTRE EM <span class="text-red-500">CONTATO</span></h2>
+                <div class="w-20 h-1 bg-red-500 mx-auto"></div>
+            </div>
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-8" data-aos="fade-right">
+                    <h3 class="text-2xl font-bold mb-6">Informações</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <i data-feather="map-pin" class="text-red-500 mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold">Endereço</h4>
+                                <p class="text-gray-400">Av. Fitness, 123 - Centro, São Paulo - SP</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-feather="phone" class="text-red-500 mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold">Telefone</h4>
+                                <p class="text-gray-400">(11) 1234-5678</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-feather="mail" class="text-red-500 mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold">Email</h4>
+                                <p class="text-gray-400">contato@powerfit.com.br</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-feather="clock" class="text-red-500 mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold">Horário de Funcionamento</h4>
+                                <p class="text-gray-400">Segunda a Sexta: 6h às 23h</p>
+                                <p class="text-gray-400">Sábado: 8h às 18h</p>
+                                <p class="text-gray-400">Domingo: 9h às 14h</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-10">
+                        <h3 class="text-2xl font-bold mb-6">Nos encontre</h3>
+                        <div class="h-64 w-full rounded-lg overflow-hidden">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0754267452926!2d-46.65342658502239!3d-23.565734367638806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1629839397593!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold mb-6">Mande uma mensagem</h3>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block mb-2 font-medium">Nome Completo</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2 font-medium">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" required>
+                        </div>
+                        <div>
+                            <label for="phone" class="block mb-2 font-medium">Telefone</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-2 font-medium">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg transition">
+                            ENVIAR MENSAGEM
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <i data-feather="activity" class="text-red-500 mr-2"></i>
+                        <span class="text-xl font-bold bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">POWERFIT</span>
+                    </div>
+                    <p class="text-gray-400 max-w-xs">
+                        Transformando vidas através do fitness desde 2010. Venha fazer parte da nossa comunidade!
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-lg font-bold mb-4">Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="text-gray-400 hover:text-red-500 transition">Home</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-red-500 transition">Sobre</a></li>
+                            <li><a href="#plans" class="text-gray-400 hover:text-red-500 transition">Planos</a></li>
+                            <li><a href="#testimonials" class="text-gray-400 hover:text-red-500 transition">Depoimentos</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-red-500 transition">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold mb-4">Planos</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#plans" class="text-gray-400 hover:text-red-500 transition">Básico</a></li>
+                            <li><a href="#plans" class="text-gray-400 hover:text-red-500 transition">Premium</a></li>
+                            <li><a href="#plans" class="text-gray-400 hover:text-red-500 transition">VIP</a></li>
+                            <li><a href="#plans" class="text-gray-400 hover:text-red-500 transition">Personal Trainer</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold mb-4">Redes Sociais</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-red-500 transition">
+                                <i data-feather="facebook"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-red-500 transition">
+                                <i data-feather="instagram"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-red-500 transition">
+                                <i data-feather="twitter"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-red-500 transition">
+                                <i data-feather="youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 mb-4 md:mb-0">
+                    © 2023 PowerFit. Todos os direitos reservados.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-gray-300 transition">Termos de Uso</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-300 transition">Política de Privacidade</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/551112345678" target="_blank" class="fixed bottom-8 right-8 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition">
+        <i data-feather="message-circle"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth Scrolling for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Testimonial Slider
+        const slider = document.getElementById('testimonial-slider');
+        const dots = document.querySelectorAll('.testimonial-dot');
+        let currentIndex = 0;
+        
+        function goToSlide(index) {
+            currentIndex = index;
+            const slideWidth = document.querySelector('.testimonial-slide').offsetWidth;
+            slider.scrollTo({
+                left: index * slideWidth,
+                behavior: 'smooth'
+            });
+            
+            // Update dots
+            dots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.remove('bg-gray-600');
+                    dot.classList.add('bg-red-500');
+                } else {
+                    dot.classList.remove('bg-red-500');
+                    dot.classList.add('bg-gray-600');
+                }
+            });
+        }
+        
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                goToSlide(parseInt(dot.getAttribute('data-index')));
+            });
+        });
+        
+        // Auto slide
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % dots.length;
+            goToSlide(currentIndex);
+        }, 5000);
+
+        // Form Validation
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simple validation
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            if (name && email && phone && message) {
+                alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+                contactForm.reset();
+            } else {
+                alert('Por favor, preencha todos os campos.');
+            }
+        });
+
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Initialize Feather Icons
+        feather.replace();
+    </script>
+</body>
+</html>
