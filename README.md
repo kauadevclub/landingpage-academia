@@ -1,4 +1,5 @@
 # 🏋️‍♂️ Landing Page Academia POWERFIT
+https://paginaacademiaapowerfit.netlify.app/
 
 Uma landing page profissional para academia, desenvolvida com **HTML, CSS e JavaScript**, focada em design moderno, responsividade e experiência do usuário.  
 Projeto criado para apresentar serviços, horários, planos e incentivar a inscrição de novos alunos.  
